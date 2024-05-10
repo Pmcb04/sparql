@@ -1,22 +1,23 @@
 document.getElementById('consultButton').addEventListener('click', function() {
+   // SPARQL query to obtain the 10 largest cities in Spain without duplicates
+   const sparqlQuery = `
+   SELECT DISTINCT ?cityLabel (MAX(?population) AS ?maxPopulation)
+   WHERE {
+     ?city wdt:P31/wdt:P279* wd:Q515 ;    # Filter entities that are instances of cities
+           wdt:P17 wd:Q29 ;               # Filter cities located in Spain
+           wdt:P1082 ?population ;        # Get the population of the city
+           rdfs:label ?cityLabel .        # Get the name of the city
+     FILTER(LANG(?cityLabel) = "en")      # Filter city names in English
+   }
+   GROUP BY ?cityLabel
+   ORDER BY DESC(?maxPopulation)          # Sort cities by maximum population in descending order
+   LIMIT 10                               # Limit the result to the top 10 cities
+   `;
   executeQuery(sparqlQuery);
 });
 
 function executeQuery(query) {
-  // Consulta SPARQL para obtener las 10 ciudades más grandes de España sin duplicados
-  const sparqlQuery = `
-  SELECT DISTINCT ?cityLabel (MAX(?population) AS ?maxPopulation)
-  WHERE {
-    ?city wdt:P31/wdt:P279* wd:Q515 ;    # Filtrar entidades que son instancias de ciudades
-          wdt:P17 wd:Q29 ;               # Filtrar ciudades ubicadas en España
-          wdt:P1082 ?population ;        # Obtener la población de la ciudad
-          rdfs:label ?cityLabel .        # Obtener el nombre de la ciudad
-    FILTER(LANG(?cityLabel) = "es")      # Filtrar los nombres de las ciudades en español
-  }
-  GROUP BY ?cityLabel
-  ORDER BY DESC(?maxPopulation)          # Ordenar las ciudades por población máxima de manera descendente
-  LIMIT 10                               # Limitar el resultado a las 10 primeras ciudades
-  `;
+ 
 
   document.getElementById('sparqlQuery').innerText = query;
 
@@ -35,7 +36,7 @@ function executeQuery(query) {
         populations.push(parseInt(item.maxPopulation.value));
       });
 
-      createPieChart(cities, populations);
+      createPieChart(cities, populations, 'Population', 'right');
     })
     .catch(error => console.error('Error:', error));
 }
@@ -43,7 +44,7 @@ function executeQuery(query) {
 let myPieChart; // Variable global para almacenar la instancia del gráfico
 
 
-function createPieChart(labels, data) {
+function createPieChart(labels, data, dataName, legendPosition) {
   if (myPieChart) {
     myPieChart.destroy(); // Destruir el gráfico existente si hay uno
   }
@@ -56,7 +57,7 @@ function createPieChart(labels, data) {
     data: {
       labels: labels,
       datasets: [{
-        label: 'Población',
+        label: dataName,
         data: data,
         backgroundColor: backgroundColors,
         borderWidth: 1
@@ -67,7 +68,13 @@ function createPieChart(labels, data) {
       maintainAspectRatio: false,
       title: {
         display: true,
-        text: 'Población'
+        text: dataName
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: legendPosition
+        }
       }
     }
   });

@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consulta Wikidata</title>
+  <title>Queries SPARQL</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 </head>
 <body>
-  <h1>Consultas SPARQL</h1>
+  <h1>Queries SPARQL</h1>
+  <p class="description">These are some example SPARQL queries to retrieve information about cities in Spain.</p>
   <div id="container">
     <div class="querySection">
       <div id="queryAndChartContainer">
         <div id="queryContainer">
-          <h2>Las 10 ciudades más grandes de España</h2>
+          <h2>The 10th more bigger cities in Spain</h2>
           <pre id="sparqlQuery"></pre>
         </div>
         <div id="chartContainer">
@@ -21,12 +22,28 @@
         </div>
       </div>
       <div id="buttonContainer">
-        <button id="consultButton">Consultar</button>
+        <button id="consultButton" class="10_cities_bigger_spain">Consult</button>
+      </div>
+    </div>
+
+    <div class="querySection">
+      <div id="queryAndChartContainer">
+        <div id="queryContainer">
+          <h2>The 20th more bigger cities in Spain</h2>
+          <pre id="sparqlQuery_2"></pre>
+        </div>
+        <div id="chartContainer">
+          <canvas id="pieChart_2"></canvas>
+        </div>
+      </div>
+      <div id="buttonContainer">
+        <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
       </div>
     </div>
   </div>
 
+  <script src="queries/10_cities_bigger_spain.js" defer></script>
+  <script src="queries/20_cities_bigger_spain.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
