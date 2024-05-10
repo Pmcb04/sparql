@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta Wikidata</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+</head>
+<body>
+  <h1>Consultas SPARQL</h1>
+  <div id="container">
+    <div class="querySection">
+      <div id="queryAndChartContainer">
+        <div id="queryContainer">
+          <h2>Las 10 ciudades más grandes de España</h2>
+          <pre id="sparqlQuery"></pre>
+        </div>
+        <div id="chartContainer">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+      <div id="buttonContainer">
+        <button id="consultButton">Consultar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

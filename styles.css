@@ -1,0 +1,48 @@
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.querySection {
+  display: flex;
+  flex-direction: column; /* Ahora la sección de consulta es una columna */
+  margin-top: 20px;
+  width: calc(100% - 40px); /* Tamaño igual al 100% menos 40px de margen a cada lado */
+  margin-left: 20px; /* Margen izquierdo */
+  margin-right: 20px; /* Margen derecho */
+  position: relative; /* Establecer posición relativa para alinear el botón */
+  border: 2px solid #ccc; /* Borde más grueso */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+
+#queryAndChartContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+#queryContainer, #chartContainer {
+  width: 50%;
+  padding: 20px;
+  height: 500px;
+  overflow: auto;
+}
+
+#buttonContainer {
+  width: 100%;
+}
+
+#consultButton {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold; /* Hacer el texto del botón en negrita */
+  margin-top: 10px; /* Agregar un poco más de margen arriba del botón de consulta */
+  width: 100%;
+  padding: 15px;
+  background-color: #B19CD9; /* Color lila */
+  color: white;
+  border: none;
+  border-radius: 0; /* Quitar los bordes redondeados */
+  cursor: pointer;
+}
+
+#consultButton:hover {
+  background-color: #9775BB; /* Cambiar color al pasar el ratón */
+}
