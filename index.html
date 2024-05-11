@@ -6,15 +6,23 @@
   <title>Queries SPARQL</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+  <script src="data/cities_bigger_spain.js" type="module" defer></script>
+  <script src="data/cities_population_spain.js" type="module" defer></script>
+  <script src="data/cities_highest_green_areas.js" type="module" defer></script> 
+  <script src="data/diferent_population_spain_italy.js" type="module" defer></script> 
+  <script src="data/historical_population_badajoz.js" type="module" defer></script>
+
 </head>
 <body>
   <h1>Queries SPARQL</h1>
-  <p class="description">These are some example SPARQL queries to retrieve information about cities in Spain.</p>
+  <p class="description">These are some example SPARQL queries to retrieve information about cities.</p>
   <div id="container">
     <div class="querySection">
       <div id="queryAndChartContainer">
         <div id="queryContainer">
           <h2>The 10th more bigger cities in Spain</h2>
+          <h3>Wikidata</h3>
           <pre id="sparqlQuery"></pre>
         </div>
         <div id="chartContainer">
@@ -22,14 +30,15 @@
         </div>
       </div>
       <div id="buttonContainer">
-        <button id="consultButton" class="10_cities_bigger_spain">Consult</button>
+        <button id="consultButton" class="cities_bigger_spain">Consult</button>
       </div>
     </div>
 
     <div class="querySection">
       <div id="queryAndChartContainer">
         <div id="queryContainer">
-          <h2>The 20th more bigger cities in Spain</h2>
+          <h2>The 20th cities with more population in Spain</h2>
+          <h3>Wikidata</h3>
           <pre id="sparqlQuery_2"></pre>
         </div>
         <div id="chartContainer">
@@ -37,13 +46,62 @@
         </div>
       </div>
       <div id="buttonContainer">
-        <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+        <button id="consultButton" class="cities_population_spain">Consult</button>
       </div>
     </div>
   </div>
 
-  <script src="queries/10_cities_bigger_spain.js" defer></script>
-  <script src="queries/20_cities_bigger_spain.js" defer></script>
+  <div class="querySection">
+    <div id="queryAndChartContainer">
+      <div id="queryContainer">
+        <h2>The 10th cities in Spain with the highest percentage of green areas</h2>
+        <h3>Wikidata</h3>
+        <pre id="sparqlQuery_3"></pre>
+      </div>
+      <div id="chartContainer">
+        <canvas id="pieChart_3"></canvas>
+      </div>
+    </div>
+    <div id="buttonContainer">
+      <button id="consultButton" class="cities_highest_green_areas">Consult</button>
+    </div>
+  </div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>Diferent population the city with more population between Spain and Italy</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_4"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_4"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="diferent_population_spain_italy">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>Get the historical population in Badajoz City</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_5"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_5"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="historical_population_badajoz">Consult</button>
+  </div>
+</div>
+</div>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
