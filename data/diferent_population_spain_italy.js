@@ -22,7 +22,7 @@ document.getElementsByClassName(CLASS_NAME)[0].addEventListener('click', async f
     population.push(parseInt(item.population.value));
   });
 
-  diferent_population_spain_italy_chart = drawBarChart(diferent_population_spain_italy_chart, cities, population, "Population in the bigger cities", 'Cities', 'Population', PIE_CHART_TAG);
+  diferent_population_spain_italy_chart = drawBarChart(diferent_population_spain_italy_chart, cities, population, "Population in the bigger cities", 'Population', 'Population', PIE_CHART_TAG);
  });
  
 

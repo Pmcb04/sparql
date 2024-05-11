@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 
+
+  <!-- get the data from sparql endpoints -->
   <script src="data/cities_bigger_spain.js" type="module" defer></script>
   <script src="data/cities_population_spain.js" type="module" defer></script>
   <script src="data/cities_highest_green_areas.js" type="module" defer></script> 
   <script src="data/diferent_population_spain_italy.js" type="module" defer></script> 
-  <script src="data/historical_population_badajoz.js" type="module" defer></script>
+  <script src="data/historical_population_badajoz.js" type="module" defer></script> 
+  <script src="data/map_london.js" type="module" defer></script>
+  <script src="data/distiric_more_population_spain.js" type="module" defer></script>
+  <script src="data/distiric_less_population_spain.js" type="module" defer></script>
 
 </head>
 <body>
@@ -102,6 +107,265 @@
 </div>
 </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>Get places of London</h2>
+      <h3>DBpedia</h3>
+      <pre id="sparqlQuery_6"></pre>
+    </div>
+    <div id="chartContainer">
+      <div class="map" id="pieChart_6"></div>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="map_london">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>Distric in Spain with more density population</h2>
+      <h3>DBpedia</h3>
+      <pre id="sparqlQuery_7"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_7"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="distiric_more_population_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>Distric in Spain with less density population</h2>
+      <h3>DBpedia</h3>
+      <pre id="sparqlQuery_8"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_8"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="distiric_less_population_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_9"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_9"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_10"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_10"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_11"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_11"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_12"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_12"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_13"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_13"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_14"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_14"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_15"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_15"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_16"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_16"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_17"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_17"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_18"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_18"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_19"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_19"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+
+<div class="querySection">
+  <div id="queryAndChartContainer">
+    <div id="queryContainer">
+      <h2>The 20th more bigger cities in Spain</h2>
+      <h3>Wikidata</h3>
+      <pre id="sparqlQuery_20"></pre>
+    </div>
+    <div id="chartContainer">
+      <canvas id="pieChart_20"></canvas>
+    </div>
+  </div>
+  <div id="buttonContainer">
+    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+  </div>
+</div>
+</div>
+ 
+<!-- libs to use graphics -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 </body>
 </html>
