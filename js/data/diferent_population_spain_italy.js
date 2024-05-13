@@ -1,5 +1,5 @@
 import { drawBarChart } from '../charts/bar_chart.js';
-import { diferent_population_spain_italy } from '../queries.js';
+import { diferent_population_spain_italy } from '../queries/wikidata.js';
 import { executeQueryWikidata } from '../sparql_endpoint.js';
 
 let diferent_population_spain_italy_chart = null;

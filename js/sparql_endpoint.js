@@ -12,7 +12,6 @@ export async function executeQueryWikidata(query) {
     }
 }
 
-// Función para ejecutar una consulta SPARQL a DBpedia
 export async function executeQueryDBpedia(query) {
   try {
       const response = await fetch('http://dbpedia.org/sparql?query=' + encodeURIComponent(query) + '&format=json');
@@ -24,5 +23,28 @@ export async function executeQueryDBpedia(query) {
   } catch (error) {
       console.error('Error:', error);
       throw error;
+  }
+}
+
+
+export async function executeQueryOSM(query) {
+  const endpointUrl = 'https://overpass-api.de/api/interpreter';
+
+  try {
+    const response = await fetch(endpointUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: 'data=' + encodeURIComponent(query)
+    });
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
   }
 }

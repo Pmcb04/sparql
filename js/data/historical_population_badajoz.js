@@ -1,5 +1,5 @@
 import { drawLineChart } from '../charts/line_chart.js';
-import { historical_population_badajoz } from '../queries.js';
+import { historical_population_badajoz } from '../queries/wikidata.js';
 import { executeQueryWikidata } from '../sparql_endpoint.js';
 
 let historical_population_badajoz_chart = null;
@@ -7,7 +7,6 @@ let historical_population_badajoz_chart = null;
 const CLASS_NAME = 'historical_population_badajoz'
 const SPARQL_QUERY_TAG = 'sparqlQuery_5'
 const PIE_CHART_TAG = 'pieChart_5'
-const PIE_CHART_LEYEND_POSITION = 'right'
 
 document.getElementsByClassName(CLASS_NAME)[0].addEventListener('click', async function() {    // SPARQL query to obtain the 10 largest cities in Spain without duplicates
 

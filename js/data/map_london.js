@@ -1,5 +1,5 @@
 import { drawMap } from '../charts/map_chart.js';
-import { map_london } from '../queries.js';
+import { map_london } from '../queries/dbpedia.js';
 import { executeQueryDBpedia } from '../sparql_endpoint.js';
 
 let map_london_chart = null;

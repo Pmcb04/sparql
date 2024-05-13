@@ -1,5 +1,5 @@
 import { drawBarChart } from '../charts/bar_chart.js';
-import { distiric_less_population_spain } from '../queries.js';
+import { distiric_less_population_spain } from '../queries/dbpedia.js';
 import { executeQueryDBpedia } from '../sparql_endpoint.js';
 
 let distiric_less_population_spain_chart = null;

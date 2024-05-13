@@ -1,5 +1,5 @@
 import { drawPieChart } from '../charts/pie_chart.js';
-import { cities_bigger_spain } from '../queries.js';
+import { cities_bigger_spain } from '../queries/wikidata.js';
 import { executeQueryWikidata } from '../sparql_endpoint.js';
 
 let cities_bigger_spain_chart = null;

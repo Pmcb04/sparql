@@ -1,5 +1,5 @@
 import { drawPieChart } from '../charts/pie_chart.js';
-import { cities_highest_green_areas } from '../queries.js';
+import { cities_highest_green_areas } from '../queries/wikidata.js';
 import { executeQueryWikidata } from '../sparql_endpoint.js';
 
 let cities_highest_green_areas_chart = null;

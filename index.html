@@ -4,19 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Queries SPARQL</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 
 
   <!-- get the data from sparql endpoints -->
-  <script src="data/cities_bigger_spain.js" type="module" defer></script>
-  <script src="data/cities_population_spain.js" type="module" defer></script>
-  <script src="data/cities_highest_green_areas.js" type="module" defer></script> 
-  <script src="data/diferent_population_spain_italy.js" type="module" defer></script> 
-  <script src="data/historical_population_badajoz.js" type="module" defer></script> 
-  <script src="data/map_london.js" type="module" defer></script>
-  <script src="data/distiric_more_population_spain.js" type="module" defer></script>
-  <script src="data/distiric_less_population_spain.js" type="module" defer></script>
+  <script src="js/data/cities_bigger_spain.js" type="module" defer></script>
+  <script src="js/data/cities_population_spain.js" type="module" defer></script>
+  <script src="js/data/cities_highest_green_areas.js" type="module" defer></script> 
+  <script src="js/data/diferent_population_spain_italy.js" type="module" defer></script> 
+  <script src="js/data/historical_population_badajoz.js" type="module" defer></script> 
+  <script src="js/data/map_london.js" type="module" defer></script>
+  <script src="js/data/distiric_more_population_spain.js" type="module" defer></script>
+  <script src="js/data/distiric_less_population_spain.js" type="module" defer></script>
+  <script src="js/data/count_museum_spain.js" type="module" defer></script>
+  <script src="js/data/monuments_spain.js" type="module" defer></script>
+  <script src="js/data/restaurants_caceres.js" type="module" defer></script>
+  <script src="js/data/hotels_caceres.js" type="module" defer></script>
 
 </head>
 <body>
@@ -161,8 +165,8 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
-      <h3>Wikidata</h3>
+      <h2>How much museum it is in Spain</h2>
+      <h3>DBpedia</h3>
       <pre id="sparqlQuery_9"></pre>
     </div>
     <div id="chartContainer">
@@ -170,7 +174,7 @@
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="museum_spain">Consult</button>
   </div>
 </div>
 </div>
@@ -178,16 +182,16 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
-      <h3>Wikidata</h3>
+      <h2>Monuments in Spain</h2>
+      <h3>DBpedia</h3>
       <pre id="sparqlQuery_10"></pre>
     </div>
     <div id="chartContainer">
-      <canvas id="pieChart_10"></canvas>
+      <div class="map" id="pieChart_10"></div>
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="monuments_spain">Consult</button>
   </div>
 </div>
 </div>
@@ -195,16 +199,16 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
-      <h3>Wikidata</h3>
+      <h2>Restaurants in Caceres</h2>
+      <h3>OpenStreetMap</h3>
       <pre id="sparqlQuery_11"></pre>
     </div>
     <div id="chartContainer">
-      <canvas id="pieChart_11"></canvas>
+      <div class="map" id="pieChart_11"></div>
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="restaurants_caceres">Consult</button>
   </div>
 </div>
 </div>
@@ -212,16 +216,16 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
-      <h3>Wikidata</h3>
+      <h2>Hotels in Cáceres</h2>
+      <h3>OpenStreetMap</h3>
       <pre id="sparqlQuery_12"></pre>
     </div>
     <div id="chartContainer">
-      <canvas id="pieChart_12"></canvas>
+      <div class="map" id="pieChart_12"></div>
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="hotels_caceres">Consult</button>
   </div>
 </div>
 </div>
@@ -242,6 +246,8 @@
   </div>
 </div>
 </div>
+
+
 
 <div class="querySection">
   <div id="queryAndChartContainer">
