@@ -4,9 +4,9 @@ import { executeQueryOSM } from '../sparql_endpoint.js';
 
 let hostal_caceres_chart = null;
 
-const CLASS_NAME = 'restaurants_caceres'
-const SPARQL_QUERY_TAG = 'sparqlQuery_13'
-const PIE_CHART_TAG = 'pieChart_13'
+const CLASS_NAME = 'hotels_caceres'
+const SPARQL_QUERY_TAG = 'sparqlQuery_12'
+const PIE_CHART_TAG = 'pieChart_12'
 
 document.getElementsByClassName(CLASS_NAME)[0].addEventListener('click', async function() {    // SPARQL query to obtain the 10 largest cities in Spain without duplicates
 
@@ -17,8 +17,7 @@ document.getElementsByClassName(CLASS_NAME)[0].addEventListener('click', async f
   var locations = [];
 
   data.elements.forEach(item => {
-      if(item.lat && item.lon && item.tags.amenity && item.tags.amenity == "restaurant"){
-          console.log(item);
+    if(item.lat && item.lon && item.tags.tourism && item.tags.tourism == "hotel"){
           locations.push({
               lat: item.lat,
               long: item.lon,
