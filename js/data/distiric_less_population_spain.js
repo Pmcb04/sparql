@@ -14,8 +14,6 @@ document.getElementsByClassName(CLASS_NAME)[0].addEventListener('click', async f
 
   let data = await executeQueryDBpedia(distiric_less_population_spain);
 
-  console.log("data", data);
-
   const cities = [];
   const populationDensity = [];
 

@@ -24,6 +24,23 @@ h3{
   font-size: 1em;
 }
 
+.badge {
+  top: 10px; /* Ajusta la posición vertical */
+  left: 10px; /* Ajusta la posición horizontal */
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff; /* Color del redondel */
+  border: 4px solid #B19CD9; /* Margen de color #B19CD9 */
+  border-radius: 50%; /* Asegura que el redondel sea circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000; /* Color del número */
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
 .description {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -33,14 +50,14 @@ h3{
 
 .querySection {
   display: flex;
-  flex-direction: column; /* Ahora la sección de consulta es una columna */
+  flex-direction: column;
   margin-top: 20px;
-  width: calc(100% - 40px); /* Tamaño igual al 100% menos 40px de margen a cada lado */
-  margin-left: 20px; /* Margen izquierdo */
-  margin-right: 20px; /* Margen derecho */
-  position: relative; /* Establecer posición relativa para alinear el botón */
-  border: 2px solid #ccc; /* Borde más grueso */
-  border-radius: 10px; /* Esquinas redondeadas */
+  width: calc(100% - 50px); 
+  margin-left: 20px; 
+  margin-right: 20px; 
+  position: relative; 
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }
 
 #queryAndChartContainer {

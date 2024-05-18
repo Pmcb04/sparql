@@ -15,9 +15,6 @@ document.getElementsByClassName(CLASS_NAME)[0].addEventListener('click', async f
   let data = await executeQueryDBpedia(monuments_spain);
 
   const locations = [];
-
-  console.log("data", data);
-
   
   data.forEach(item => {
     if(item.lat && item.long && item.monumentLabel){

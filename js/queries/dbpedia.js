@@ -90,3 +90,27 @@ WHERE {
 }
 
 `
+
+
+export const students_in_university_germany = `
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?university ?universityLabel ?numberOfStudents
+WHERE {
+  {
+    SELECT ?capital
+    WHERE {
+      dbr:Germany dbo:capital ?capital .
+    }
+  }
+  ?university a dbo:University ;
+              dbo:city ?capital ;
+              rdfs:label ?universityLabel ;
+              dbo:numberOfStudents ?numberOfStudents .
+  FILTER(lang(?universityLabel) = "en")
+}
+ORDER BY DESC(?numberOfStudents)
+
+`

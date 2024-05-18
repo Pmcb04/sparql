@@ -91,3 +91,110 @@ WHERE {
 }
 ORDER BY ?year
 `
+
+export const historical_people_birthday_spain = `
+SELECT DISTINCT ?personLabel ?birthdate
+WHERE {
+  ?person wdt:P31 wd:Q5 ;
+          wdt:P27 wd:Q29 ;  # Spain as country of birth
+          wdt:P569 ?birthdate .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 30
+`
+
+export const historical_writters_birthdays_spain = `
+SELECT DISTINCT ?personLabel ?birthdate
+WHERE {
+  ?person wdt:P31 wd:Q5 ;
+          wdt:P27 wd:Q29 ;  # Spain as country of birth
+          wdt:P569 ?birthdate ;
+          wdt:P106 wd:Q36180 .  # Writer as occupation
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+LIMIT 30
+
+`
+
+export const univertities_more_olders_europe = `
+SELECT ?university ?universityLabel ?inception ?latitude ?longitude
+WHERE {
+  ?university wdt:P31 wd:Q3918 ; # Instance of university
+              wdt:P571 ?inception ; # Date of foundation
+              wdt:P17 ?country ; # Located in a country
+              p:P625 ?coordinateLocation . # Geographical coordinates
+  ?coordinateLocation psv:P625 ?coordinateNode .
+  ?coordinateNode wikibase:geoLatitude ?latitude ;
+                  wikibase:geoLongitude ?longitude .
+  ?country wdt:P30 wd:Q46 . # In Europe
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY ?inception 
+LIMIT 100
+`
+
+export const european_scientists_with_more_publications = ` 
+SELECT ?scientist ?scientistLabel (COUNT(?publication) AS ?publicationCount)
+WHERE {
+  ?scientist wdt:P31 wd:Q5 ; # Intance of person
+             wdt:P27 ?country ; # Country
+             wdt:P800 ?publication . # Have publications
+  ?country wdt:P30 wd:Q46 . # In Europe
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+GROUP BY ?scientist ?scientistLabel
+ORDER BY DESC(?publicationCount)
+LIMIT 50
+
+`
+
+export const building_more_highest = `
+SELECT ?building ?buildingLabel ?height
+WHERE {
+  ?building wdt:P31 wd:Q41176 ; # Instance of building
+            wdt:P2048 ?height . # High
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY DESC(?height)
+LIMIT 30
+
+`
+
+export const cities_european_with_more_languages = `
+SELECT ?city ?cityLabel (COUNT(?language) AS ?numLanguages) ?population WHERE {
+  ?city wdt:P31 wd:Q515;            # Instancia de ciudad
+        wdt:P17 ?country;           # País
+        wdt:P1082 ?population;      # Población
+        wdt:P37 ?language.          # Idiomas oficiales
+  ?country wdt:P30 wd:Q46.          # Continente Europa
+  
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+GROUP BY ?city ?cityLabel ?population
+ORDER BY DESC(?numLanguages)
+LIMIT 100
+
+`
+
+export const museum_per_european_cities = `
+SELECT ?city ?cityLabel ?population ?museumsPer100k WHERE {
+  ?city wdt:P31 wd:Q515;                      # Instancia de ciudad
+        wdt:P17 ?country;                     # País
+        wdt:P1082 ?population.                # Población total
+  ?country wdt:P30 wd:Q46.                    # Continente Europa
+
+  {
+    SELECT ?city (COUNT(?museum) AS ?numMuseums) WHERE {
+      ?museum wdt:P31 wd:Q33506;              # Instancia de museo
+              wdt:P276 ?city.                 # Ubicación en la ciudad
+    }
+    GROUP BY ?city
+  }
+
+  BIND((?numMuseums / ?population) * 100000 AS ?museumsPer100k)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+ORDER BY DESC(?museumsPer100k)
+LIMIT 100
+`

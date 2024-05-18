@@ -17,8 +17,6 @@ document.getElementsByClassName(CLASS_NAME)[0].addEventListener('click', async f
   const population = [];
   const years = [];
 
-  console.log("data", data);
-
   data.forEach(item => {
     years.push(item.year.value);
     population.push(parseInt(item.population.value));

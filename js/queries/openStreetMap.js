@@ -19,3 +19,5 @@ out body;
 >;
 out skel qt;
 `
+// To see more examples of queries, visit:
+// https://wiki.openstreetmap.org/wiki/SPARQL_vs_Overpass_QL_examples#:~:text=SPARQL%20has%20functions%20for%20matching,a%20filter%20for%20regular%20expressions.

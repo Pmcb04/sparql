@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
 
-
   <!-- get the data from sparql endpoints -->
   <script src="js/data/cities_bigger_spain.js" type="module" defer></script>
   <script src="js/data/cities_population_spain.js" type="module" defer></script>
@@ -21,6 +20,14 @@
   <script src="js/data/monuments_spain.js" type="module" defer></script>
   <script src="js/data/restaurants_caceres.js" type="module" defer></script>
   <script src="js/data/hotels_caceres.js" type="module" defer></script>
+  <script src="js/data/students_in_university_germany.js" type="module" defer></script>
+  <script src="js/data/historical_people_birthday_spain.js" type="module" defer></script>
+  <script src="js/data/historical_writters_birthday_spain.js" type="module" defer></script>
+  <script src="js/data/universities_more_olders_europe.js" type="module" defer></script>
+  <script src="js/data/european_scientists_with_more_publications.js" type="module" defer></script>
+  <script src="js/data/building_more_highest.js" type="module" defer></script>
+  <script src="js/data/cities_european_with_more_languages.js" type="module" defer></script>
+  <script src="js/data/museum_per_european_cities.js" type="module" defer></script>
 
 </head>
 <body>
@@ -30,6 +37,7 @@
     <div class="querySection">
       <div id="queryAndChartContainer">
         <div id="queryContainer">
+          <div class="badge">1</div>        
           <h2>The 10th more bigger cities in Spain</h2>
           <h3>Wikidata</h3>
           <pre id="sparqlQuery"></pre>
@@ -46,6 +54,7 @@
     <div class="querySection">
       <div id="queryAndChartContainer">
         <div id="queryContainer">
+          <div class="badge">2</div>
           <h2>The 20th cities with more population in Spain</h2>
           <h3>Wikidata</h3>
           <pre id="sparqlQuery_2"></pre>
@@ -63,6 +72,7 @@
   <div class="querySection">
     <div id="queryAndChartContainer">
       <div id="queryContainer">
+        <div class="badge">3</div>
         <h2>The 10th cities in Spain with the highest percentage of green areas</h2>
         <h3>Wikidata</h3>
         <pre id="sparqlQuery_3"></pre>
@@ -80,6 +90,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">4</div>
       <h2>Diferent population the city with more population between Spain and Italy</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_4"></pre>
@@ -97,6 +108,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">5</div>
       <h2>Get the historical population in Badajoz City</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_5"></pre>
@@ -114,6 +126,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">6</div>
       <h2>Get places of London</h2>
       <h3>DBpedia</h3>
       <pre id="sparqlQuery_6"></pre>
@@ -131,6 +144,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">7</div>
       <h2>Distric in Spain with more density population</h2>
       <h3>DBpedia</h3>
       <pre id="sparqlQuery_7"></pre>
@@ -148,6 +162,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">8</div>
       <h2>Distric in Spain with less density population</h2>
       <h3>DBpedia</h3>
       <pre id="sparqlQuery_8"></pre>
@@ -165,6 +180,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">9</div>
       <h2>How much museum it is in Spain</h2>
       <h3>DBpedia</h3>
       <pre id="sparqlQuery_9"></pre>
@@ -182,6 +198,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">10</div>
       <h2>Monuments in Spain</h2>
       <h3>DBpedia</h3>
       <pre id="sparqlQuery_10"></pre>
@@ -199,6 +216,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">11</div>
       <h2>Restaurants in Caceres</h2>
       <h3>OpenStreetMap</h3>
       <pre id="sparqlQuery_11"></pre>
@@ -216,6 +234,7 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
+      <div class="badge">12</div>
       <h2>Hotels in Cáceres</h2>
       <h3>OpenStreetMap</h3>
       <pre id="sparqlQuery_12"></pre>
@@ -233,8 +252,9 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
-      <h3>Wikidata</h3>
+      <div class="badge">13</div>
+      <h2>Number students in each university in the capital of Germany</h2>
+      <h3>Dbpedia</h3>
       <pre id="sparqlQuery_13"></pre>
     </div>
     <div id="chartContainer">
@@ -242,42 +262,44 @@
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="students_in_university_germany">Consult</button>
   </div>
 </div>
 </div>
 
-
-
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
+      <div class="badge">14</div>
+      <h2>Historical people birthday in Spain</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_14"></pre>
     </div>
     <div id="chartContainer">
-      <canvas id="pieChart_14"></canvas>
+      <div id="pieChart_14"></div>
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="historical_people_birthday_spain">Consult</button>
   </div>
 </div>
 </div>
+
+
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
+      <div class="badge">15</div>
+      <h2>Historical writters birthday in Spain</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_15"></pre>
     </div>
     <div id="chartContainer">
-      <canvas id="pieChart_15"></canvas>
+      <div id="pieChart_15"></div>
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="historical_writters_birthday_spain">Consult</button>
   </div>
 </div>
 </div>
@@ -285,16 +307,16 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
-      <h3>Wikidata</h3>
+      <div class="badge">16</div>
+      <h2>Universities more older in Europe</h2>
       <pre id="sparqlQuery_16"></pre>
     </div>
     <div id="chartContainer">
-      <canvas id="pieChart_16"></canvas>
+      <div class="map" id="pieChart_16"></div>
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="universities_more_olders_europe">Consult</button>
   </div>
 </div>
 </div>
@@ -302,7 +324,8 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
+      <div class="badge">17</div>
+      <h2>European Scientists with more publications</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_17"></pre>
     </div>
@@ -311,7 +334,7 @@
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="european_scientists_with_more_publications">Consult</button>
   </div>
 </div>
 </div>
@@ -319,7 +342,8 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
+      <div class="badge">18</div>
+      <h2>Building more highest</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_18"></pre>
     </div>
@@ -328,15 +352,18 @@
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="building_more_highest">Consult</button>
   </div>
 </div>
 </div>
 
+
+
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
+      <div class="badge">19</div>
+      <h2>Cities in european with more languages</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_19"></pre>
     </div>
@@ -345,7 +372,7 @@
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="cities_european_with_more_languages">Consult</button>
   </div>
 </div>
 </div>
@@ -353,7 +380,8 @@
 <div class="querySection">
   <div id="queryAndChartContainer">
     <div id="queryContainer">
-      <h2>The 20th more bigger cities in Spain</h2>
+      <div class="badge">20</div>
+      <h2>Museum per 100.000 citizens in european cities</h2>
       <h3>Wikidata</h3>
       <pre id="sparqlQuery_20"></pre>
     </div>
@@ -362,10 +390,12 @@
     </div>
   </div>
   <div id="buttonContainer">
-    <button id="consultButton" class="20_cities_bigger_spain">Consult</button>
+    <button id="consultButton" class="museum_per_european_cities">Consult</button>
   </div>
 </div>
 </div>
+
+
  
 <!-- libs to use graphics -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
